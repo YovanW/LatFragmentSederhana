@@ -33,6 +33,14 @@ class MainActivity : AppCompatActivity() {
             replaceFrament(fSatu())
         }
 
+        _btnFragmentSatu.setOnClickListener {
+            replaceFrament(fSatu())
+        }
+
+        _btnFragmentDua.setOnClickListener {
+            replaceFrament(fDua())
+        }
+
     }
 
     private fun replaceFrament(fragment: Fragment){
