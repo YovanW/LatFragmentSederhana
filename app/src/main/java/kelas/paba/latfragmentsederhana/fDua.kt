@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,6 +27,24 @@ class fDua : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+        }
+    }
+
+    private lateinit var _tvHasil: TextView
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        _tvHasil = view.findViewById(R.id.tvHasil)
+
+        var namaDiterima = ""
+        var alamatDiterima = ""
+        arguments?.let {
+            namaDiterima = it.getString("Nama") ?: ""
+            alamatDiterima = it.getString("Alamat") ?: ""
+        }
+
+        if (namaDiterima != "") {
+            _tvHasil?.text = "Nama: $namaDiterima\nAlamat: $alamatDiterima"
         }
     }
 
